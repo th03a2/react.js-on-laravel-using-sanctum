@@ -133,18 +133,11 @@ use Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful;
 <pre>
   ***mySQL
   ...
-  use Jenssegers\Mongodb\Eloquent\Model;
-  use Illuminate\Auth\Authenticatable as AuthenticatableTrait;
-  use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;<br>
-
   use Laravel\Sanctum\HasApiTokens;
   
-  class User extends Model implements AuthenticatableContract {
+  class User extends Model implements Authenticatable {
           {
-              	use HasApiTokens, AuthenticatableTrait, Notifiable;
-	      	protected $connection = 'mongodb';
-    		protected $softDelete = true;
-		
+              	use HasApiTokens, Notifiable;		
               	...
           }
 </pre>
