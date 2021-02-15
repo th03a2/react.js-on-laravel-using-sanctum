@@ -132,11 +132,20 @@ use Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful;
 <h2>Step 6: Implement tokens on users.</h2>
 <pre>
   ***mySQL
+  ...
+  use Jenssegers\Mongodb\Eloquent\Model;
+  use Illuminate\Auth\Authenticatable as AuthenticatableTrait;
+  use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+
   use Laravel\Sanctum\HasApiTokens;
-  class User extends Authenticatable
+  
+  class User extends Model implements AuthenticatableContract {
           {
-              use HasApiTokens, Notifiable;
-              ...
+              	use HasApiTokens, AuthenticatableTrait, Notifiable;
+	      	protected $connection = 'mongodb';
+    		protected $softDelete = true;
+		
+              	...
           }
 </pre>
 
@@ -160,10 +169,11 @@ use Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful;
 <h2>Step 8: Let's create a PersonalAccessToken</h2>
 <pre>Copy on project</pre>
 
-<h2>Step 9: Let's create a AppServiceProvider</h2>
+<h2>Step 9: Let's update app/Providers/AppServiceProvider</h2>
 <pre>
  ...
  use Illuminate\Foundation\AliasLoader;
+ 
  ...
  public function boot()
     {
