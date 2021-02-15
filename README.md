@@ -135,7 +135,7 @@ use Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful;
   ...
   use Jenssegers\Mongodb\Eloquent\Model;
   use Illuminate\Auth\Authenticatable as AuthenticatableTrait;
-  use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+  use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;<br>
 
   use Laravel\Sanctum\HasApiTokens;
   
@@ -172,7 +172,7 @@ use Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful;
 <h2>Step 9: Let's update app/Providers/AppServiceProvider</h2>
 <pre>
  ...
- use Illuminate\Foundation\AliasLoader;
+ use Illuminate\Foundation\AliasLoader;<br>
  
  ...
  public function boot()
