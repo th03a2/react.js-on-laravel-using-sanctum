@@ -157,10 +157,10 @@ use Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful;
         ...
         </pre>
 <h2>Step 7: Let's create a AuthController</h2>
-<pre>Copy on project</pre>
+<pre>Copy the code on this project</pre>
 
 <h2>Step 8: Let's create a PersonalAccessToken</h2>
-<pre>Copy on project</pre>
+<pre>Copy the cope on this project</pre>
 
 <h2>Step 9: Let's update app/Providers/AppServiceProvider</h2>
 <pre>
@@ -192,7 +192,7 @@ DB::table('users')->insert([
 <pre>php artisan migrate --seed</pre>
 
 <h2>Step 13: Create a controller</h2>
-<pre>Http/Controllers/api.php</pre>
+<pre>Php artisan make:controller UserController</pre>
 <pre><?php
 
 namespace App\Http\Controllers;
@@ -249,10 +249,6 @@ Route::prefix('/users')->group(function () {
 }</pre>
 
 <h2>Step 15: Make Details API or any other with secure route</h2>
-<pre>Route::group(['middleware' => 'auth:sanctum'], function(){
-    //All secure URL's
-
-    });
 <pre>Route::post("login",[UserController::class,'index']);</pre>
 <pre>
 	Route::prefix('/auth')->group(function () {
@@ -264,6 +260,7 @@ Route::prefix('/users')->group(function () {
 	});
 
 	Route::group(['middleware' => 'auth:sanctum'], function (){
+	    //All secure URL's
 	    Route::prefix('/users')->group(function () {
 		Route::get('/', [UserController::class, 'index']);
 		Route::get('/list', [UserController::class, 'list']);
