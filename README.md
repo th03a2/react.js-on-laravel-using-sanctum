@@ -192,7 +192,7 @@ DB::table('users')->insert([
 <pre>php artisan migrate --seed</pre>
 
 <h2>Step 13: Create a controller</h2>
-<pre>Php artisan make:controller UserController</pre>
+<pre>Php artisan make:controller UserController -mrs</pre>
 <pre><?php
 
 namespace App\Http\Controllers;
