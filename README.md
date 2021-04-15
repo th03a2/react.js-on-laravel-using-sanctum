@@ -271,3 +271,18 @@ Route::prefix('/users')->group(function () {
 	    });
 	});
 </pre>
+
+<h2>Step 16: Create a React.js Project.</h2>
+<pre>Do the following steps</pre>
+<pre>
+a. install axios (npm i axios)
+b. Update index.js
+	import axios from 'axios';
+
+	axios.defaults.baseURL = 'http://localhost:8000/';
+	axios.defaults.withCredentials = true;
+	let token = localStorage.getItem('token');
+	if (token) { axios.defaults.headers.common['Authorization'] = 'Bearer ' + token; }
+c. add to your login component
+	componentDidMount() { axios.get('sanctum/csrf-cookie', { withCredentials: true }) }
+</pre>
