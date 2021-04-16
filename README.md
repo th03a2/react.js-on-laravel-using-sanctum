@@ -173,8 +173,9 @@ use Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful;
     {
       AliasLoader::getInstance()->alias(\Laravel\Sanctum\PersonalAccessToken::class, \App\Models\Sanctum\PersonalAccessToken::class);
     }</pre>
-
-<h2>Step 10: Let's create a seeder</h2>
+<h2>Step 10:cors.php</h2>
+<pre>'supports_credentials' => true,r</pre>
+<h2>Step 11: Let's create a seeder</h2>
 <pre>php artisan make:seeder UsersSeeder</pre>
 <pre>
 use Illuminate\Support\Facades\DB;
