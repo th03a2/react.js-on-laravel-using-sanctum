@@ -74,7 +74,7 @@ Details API
         /*
         * Package Service Providers...
         */
-	      // mongodb
+	 // Add this code
         Jenssegers\Mongodb\MongodbServiceProvider::class,
         ...
 </pre>
@@ -160,7 +160,8 @@ use Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful;
 <pre>Copy the code on this project</pre>
 
 <h2>Step 8: Let's create a PersonalAccessToken</h2>
-<pre>Copy the cope on this project</pre>
+<pre>Copy the code on this project</pre>
+<pre>app/Models/Sanctum/PersonalAccessToken.php</pre>
 
 <h2>Step 9: Let's update app/Providers/AppServiceProvider</h2>
 <pre>
@@ -175,8 +176,6 @@ use Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful;
 
 <h2>Step 10: Let's create a seeder</h2>
 <pre>php artisan make:seeder UsersSeeder</pre>
-
-<h2>Step 11: Now let's insert a record</h2>
 <pre>
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
