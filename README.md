@@ -174,8 +174,10 @@ use Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful;
       AliasLoader::getInstance()->alias(\Laravel\Sanctum\PersonalAccessToken::class, \App\Models\Sanctum\PersonalAccessToken::class);
     }</pre>
 <h2>Step 10:cors.php</h2>
-<pre>'supports_credentials' => true,r</pre>
-<h2>Step 11: Let's create a seeder</h2>
+<pre>'supports_credentials' => true</pre>
+<h2>Step 11: Let's Check the CORS</h2>
+
+<h2>Step 12: Let's create a seeder</h2>
 <pre>php artisan make:seeder UsersSeeder</pre>
 <pre>
 use Illuminate\Support\Facades\DB;
@@ -188,10 +190,10 @@ DB::table('users')->insert([
     'password' => Hash::make('password')
 ]);</pre>
 
-<h2>Step 12: Run database migrations with seeder.</h2>
+<h2>Step 13: Run database migrations with seeder.</h2>
 <pre>php artisan migrate --seed</pre>
 
-<h2>Step 13: Create a controller</h2>
+<h2>Step 14: Create a controller</h2>
 <pre>Php artisan make:controller UserController -mrs</pre>
 <pre><?php
 
@@ -224,7 +226,7 @@ class UserController extends Controller
             return response($response, 201);
     }
 }</pre>
-<h2>Step 14: Route update</h2>
+<h2>Step 15: Route update</h2>
 <pre>routes/api.php</pre>
 <pre>use App\Http\Controllers\UserController;
 
@@ -248,7 +250,7 @@ Route::prefix('/users')->group(function () {
     "token": "thisIsAsampleTokenOnly..."
 }</pre>
 
-<h2>Step 15: Make Details API or any other with secure route</h2>
+<h2>Step 17: Make Details API or any other with secure route</h2>
 <pre>Route::post("login",[UserController::class,'index']);</pre>
 <pre>
 	Route::prefix('/auth')->group(function () {
@@ -272,7 +274,7 @@ Route::prefix('/users')->group(function () {
 	});
 </pre>
 
-<h2>Step 16: Create a React.js Project.</h2>
+<h2>Step 18: Create a React.js Project.</h2>
 <pre>Do the following steps</pre>
 <pre>
 a. install axios (npm i axios)
