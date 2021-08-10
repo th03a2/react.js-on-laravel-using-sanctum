@@ -157,11 +157,15 @@ use Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful;
         ...
         </pre>
 <h2>Step 7: Let's create a AuthController</h2>
-<pre>Copy the code on this project</pre>
+<pre>Copy the code on this project
+<small>app/Http/controlers/Auth/Authcontroller</small>
+</pre>
 
 <h2>Step 8: Let's create a PersonalAccessToken</h2>
-<pre>Copy the code on this project</pre>
-<pre>app/Models/Sanctum/PersonalAccessToken.php</pre>
+<pre>
+Copy the code on this project
+<small>app/Models/Sanctum/PersonalAccessToken.php</small>
+</pre>
 
 <h2>Step 9: Let's update app/Providers/AppServiceProvider</h2>
 <pre>
@@ -173,10 +177,10 @@ use Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful;
     {
       AliasLoader::getInstance()->alias(\Laravel\Sanctum\PersonalAccessToken::class, \App\Models\Sanctum\PersonalAccessToken::class);
     }</pre>
-<h2>Step 10:cors.php</h2>
+<h2>Step 10:Update config/cors.php</h2>
 <pre>'supports_credentials' => true</pre>
 <h2>Step 11: Let's Check the CORS</h2>
-
+<pre>Use postman</pre>
 <h2>Step 12: Let's create a seeder</h2>
 <pre>php artisan make:seeder UsersSeeder</pre>
 <pre>
@@ -286,5 +290,9 @@ b. Update index.js
 	let token = localStorage.getItem('token');
 	if (token) { axios.defaults.headers.common['Authorization'] = 'Bearer ' + token; }
 c. add to your login component
+	*** Class
 	componentDidMount() { axios.get('sanctum/csrf-cookie', { withCredentials: true }) }
+	
+	***Functional hooks
+	const [sanctum, setsanctum] = useState(axios.get("sanctum/csrf-cookie", { withCredentials: true }));
 </pre>
