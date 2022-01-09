@@ -18,8 +18,8 @@ Details API
 <h2>Step 1: Create new Project</h2>
 <pre> Create Folder MyProject</pre>
 <pre>Inside MyProject Create your project..
-  ***Laravel new backend 
-  *** Create react project</pre>
+  ***server (backend | laravel)
+  ***client (frontend | react)</pre>
   
 <h2>Step 2: Update database info in .env</h2>
 <pre>
